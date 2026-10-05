@@ -6,19 +6,25 @@
 //  Copyright © 2026 Kyle Zhao. All rights reserved.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 @main
 struct Isekai_LogApp: App {
+    @State private var settings = AppSettings()
+
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            Adventure.self,
+            Party.self,
+            PartyMember.self,
+            ChatMessage.self,
+            LedgerTransaction.self,
         ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
+        let isUITesting = CommandLine.arguments.contains("-ui-testing")
+        let configuration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: isUITesting)
         do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
+            return try ModelContainer(for: schema, configurations: [configuration])
         } catch {
             fatalError("Could not create ModelContainer: \(error)")
         }
@@ -26,7 +32,10 @@ struct Isekai_LogApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AdventureListView()
+                .environment(settings)
+                .preferredColorScheme(.dark)
+                .tint(IsekaiTheme.gold)
         }
         .modelContainer(sharedModelContainer)
     }
