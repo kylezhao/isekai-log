@@ -25,7 +25,9 @@ Built for the Metanomaly iOS programming assignment (LLM Roleplay Adventure Chat
 - **Backend bookkeeping with transactions and parties**: balances are derived from a transaction
   history, never stored. Transfers between parties are first-class and counterparties (guilds,
   merchants, rivals) are created automatically when money changes hands. The player party cannot
-  overdraw; rejected events are reported back into the chat.
+  overdraw; rejected events are reported back into the chat. When a purchase is in a coin the
+  party lacks but the purse covers it overall, the ledger makes change automatically and records
+  the exchange.
 - **Bonus: income and expenses in natural language**. Narrator turns carry `ledgerEvents`, and the
   ledger screen accepts sentences like "spent 20 silver on bread", parsed on-device when Apple
   Intelligence is available and by a keyword parser otherwise.
@@ -97,7 +99,17 @@ xcodebuild test -project "Isekai Log.xcodeproj" -scheme "Isekai Log" \
   scripted end-to-end playthroughs through `ChatViewModel`.
 - `Isekai LogUITests` (XCTest): creates an adventure in scripted mode, plays three turns including
   a refused purchase, opens the ledger and party screens, and saves screenshots to
-  `/tmp/isekai-screens`.
+  `/tmp/isekai-screens`. A second test plays a turn with the real on-device model and passes
+  vacuously when Apple Intelligence is unavailable.
+
+## Known issues and tuning notes
+
+- The on-device model sometimes narrates the party's balance even though the instructions say the
+  ledger owns it; the status window is the source of truth.
+- Without the explicit "nothing is bought in the introduction" rule, the on-device model invented
+  an inn stay and a loaf of bread in the opening turn. The rule is now part of the opening prompt.
+- Guided generation into `NarratorTurn` takes 5 to 10 seconds per turn on the iPhone 16e
+  simulator for roughly 500 input and 80 output tokens; the cloud path is faster but needs a key.
 
 ## Project layout
 

@@ -47,7 +47,7 @@ final class ChatViewModel {
     func start() async {
         await refreshAvailability()
         if adventure.messages.isEmpty {
-            await runTurn(playerInput: "(The adventure begins. Introduce the world, the hero's situation and their nearly empty purse.)", playerMessage: nil)
+            await runTurn(playerInput: Self.openingPrompt, playerMessage: nil)
         } else {
             suggestedActions = adventure.sortedMessages.last { $0.role == .narrator }?.suggestedActions ?? []
             await engine.prewarm(instructions: makeRequest(playerInput: "").instructions)
@@ -161,6 +161,10 @@ final class ChatViewModel {
     }
 
     // MARK: - Prompt
+
+    /// The introduction asks for scene-setting only. Without the explicit rule the model tends to invent
+    /// purchases the player never made.
+    static let openingPrompt = "(The adventure begins. Introduce the world and the hero's situation in a few sentences. Nothing is bought, sold or paid in this introduction, so ledgerEvents must be empty.)"
 
     func makeRequest(playerInput: String) -> TurnRequest {
         let ledger = ledger

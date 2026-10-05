@@ -111,10 +111,8 @@ struct Ledger {
         if let from, from.isPlayerParty {
             let available = balance(of: from, in: currency)
             if available < amount {
-                throw LedgerError.insufficientFunds(
-                    needed: Money(amount: amount, currency: currency),
-                    available: Money(amount: available, currency: currency)
-                )
+                // Pay with other coins when the purse holds enough overall: the merchant makes change.
+                try makeChange(for: from, shortfall: amount - available, in: currency, adventure: adventure, source: source)
             }
         }
         let transaction = LedgerTransaction(
@@ -135,6 +133,33 @@ struct Ledger {
         source?.transactions.append(transaction)
         adventure.updatedAt = .now
         return transaction
+    }
+
+    /// Exchanges coins from a larger holding so `party` can pay `shortfall` in `currency`.
+    /// Records the exchange as a system expense/income pair so the audit trail shows it.
+    private func makeChange(for party: Party, shortfall: Decimal, in currency: Currency, adventure: Adventure, source: ChatMessage?) throws {
+        let neededInGold = CurrencyConverter.convert(shortfall, from: currency, to: .gold)
+        let candidates = Currency.inWorld.filter { $0 != currency }.sorted { $0.goldValue > $1.goldValue }
+        for other in candidates {
+            let holding = balance(of: party, in: other)
+            guard holding > 0, holding * other.goldValue >= neededInGold else { continue }
+            let exchanged = CurrencyConverter.convert(neededInGold, from: .gold, to: other).rounded(scale: other.fractionDigits, mode: .up)
+            let received = CurrencyConverter.convert(exchanged, from: other, to: currency).rounded(scale: currency.fractionDigits)
+            let memo = String(localized: "Changed \(Money(amount: exchanged, currency: other).formatted()) into \(Money(amount: received, currency: currency).formatted())")
+            let out = LedgerTransaction(kind: .expense, amount: exchanged, currency: other, memo: memo, origin: .system, adventure: adventure, fromParty: party, toParty: nil, sourceMessage: source)
+            let inbound = LedgerTransaction(kind: .income, amount: received, currency: currency, memo: memo, origin: .system, adventure: adventure, fromParty: nil, toParty: party, sourceMessage: source)
+            for transaction in [out, inbound] {
+                modelContext.insert(transaction)
+                adventure.transactions.append(transaction)
+            }
+            party.outgoing.append(out)
+            party.incoming.append(inbound)
+            return
+        }
+        throw LedgerError.insufficientFunds(
+            needed: Money(amount: shortfall, currency: currency),
+            available: Money(amount: netWorthInGold(of: party).rounded(scale: 2), currency: .gold)
+        )
     }
 
     /// Applies a batch of narrator or player events. Events are validated in order against the running

@@ -74,6 +74,69 @@ final class Isekai_LogUITests: XCTestCase {
         app.buttons["Done"].tap()
     }
 
+    /// Plays one turn with the on-device model. Passes vacuously when Apple Intelligence is unavailable,
+    /// so the suite stays green on machines without it while still exercising the real model where it exists.
+    @MainActor
+    func testOnDevicePlaythrough() throws {
+        let app = XCUIApplication()
+        app.launchArguments += ["-ui-testing"]
+        app.launch()
+
+        app.buttons["newAdventureButton"].tap()
+        let heroName = app.textFields["heroNameField"]
+        XCTAssertTrue(heroName.waitForExistence(timeout: 5))
+        heroName.tap()
+        heroName.typeText("Yui")
+        let onDeviceMode = app.buttons["mode-onDevice"]
+        var swipes = 0
+        while !onDeviceMode.isHittable, swipes < 6 {
+            app.swipeUp()
+            swipes += 1
+        }
+        onDeviceMode.tap()
+        app.buttons["beginButton"].tap()
+
+        let composer = textInput(app, "composerField")
+        XCTAssertTrue(composer.waitForExistence(timeout: 10))
+
+        // Either the opening narration arrives, or the availability banner explains why it cannot.
+        let unavailable = app.staticTexts.containing(NSPredicate(format: "label CONTAINS[c] %@", "Apple Intelligence")).firstMatch
+        let metrics = app.staticTexts.matching(NSPredicate(format: "label == %@", "Apple Intelligence")).firstMatch
+        let deadline = Date().addingTimeInterval(180)
+        var narrated = false
+        while Date() < deadline {
+            if metrics.exists { narrated = true; break }
+            if unavailable.exists, !metrics.exists, app.buttons.containing(NSPredicate(format: "label BEGINSWITH %@", "Use ")).firstMatch.exists {
+                snapshot(app, "ondevice-unavailable")
+                print("Isekai Log UI test: on-device model unavailable, skipping.")
+                return
+            }
+            RunLoop.current.run(until: Date().addingTimeInterval(0.5))
+        }
+        if !narrated {
+            snapshot(app, "ondevice-timeout")
+            let labels = app.staticTexts.allElementsBoundByIndex.map(\.label).filter { !$0.isEmpty }
+            XCTFail("On-device narrator did not produce the opening turn. Screen: \(labels.joined(separator: " | "))")
+            return
+        }
+        snapshot(app, "09-ondevice-opening")
+
+        composer.tap()
+        composer.typeText("I sell the wolf pelts to the merchant for 30 gold")
+        app.buttons["sendButton"].tap()
+        let secondTurn = app.staticTexts.matching(NSPredicate(format: "label == %@", "Apple Intelligence"))
+        let turnDeadline = Date().addingTimeInterval(180)
+        while Date() < turnDeadline, secondTurn.count < 2 {
+            RunLoop.current.run(until: Date().addingTimeInterval(0.5))
+        }
+        XCTAssertGreaterThanOrEqual(secondTurn.count, 2, "Second on-device turn should complete")
+        snapshot(app, "10-ondevice-turn")
+
+        app.buttons["ledgerButton"].tap()
+        XCTAssertTrue(app.staticTexts["Net worth"].waitForExistence(timeout: 5))
+        snapshot(app, "11-ondevice-ledger")
+    }
+
     /// Multi-line SwiftUI text fields are exposed as text views.
     private func textInput(_ app: XCUIApplication, _ identifier: String) -> XCUIElement {
         let field = app.textFields[identifier]

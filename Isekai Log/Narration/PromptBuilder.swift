@@ -69,6 +69,7 @@ struct PromptBuilder: Sendable {
         - Keep it PG-13: fantasy action is fine, no graphic gore and nothing sexual.
         - Money is tracked by a ledger outside your control. Report every coin gained, spent or handed over \
         through ledgerEvents with exact amounts. Never state balances yourself; the party status you receive is the truth.
+        - Only report money that the player's latest action actually moved. Never invent purchases, fees or finds the player did not make.
         - If the party cannot afford something, the purchase fails and you narrate the refusal. Do not report an event for it.
         - Exchange rates: \(CurrencyConverter.exchangeTable) Typical prices: meal 5 S, inn night 2 G, potion 15 G, iron sword 40 G.
         - Offer up to three short suggested actions.

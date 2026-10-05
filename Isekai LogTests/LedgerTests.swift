@@ -66,6 +66,26 @@ struct LedgerTests {
         #expect(world.ledger.balances(of: world.party).count == 3)
     }
 
+    @Test func makesChangeFromGoldForSmallCopperPurchase() throws {
+        let world = try TestWorld(startingGold: 8)
+        let outcome = world.ledger.apply([LedgerEvent(kind: "expense", amount: 1, currency: "C", memo: "loaf of bread")], to: world.adventure, source: nil, origin: .narrator)
+        #expect(outcome.applied.count == 1)
+        #expect(outcome.rejected.isEmpty)
+        // 0.01 G was changed into 1 C, which then paid for the bread.
+        #expect(world.ledger.balance(of: world.party, in: .gold) == Decimal(string: "7.99"))
+        #expect(world.ledger.balance(of: world.party, in: .copper) == 0)
+        #expect(world.ledger.netWorthInGold(of: world.party) == Decimal(string: "7.99"))
+        #expect(world.adventure.transactions.filter { $0.origin == .system }.count == 3) // purse + exchange pair
+    }
+
+    @Test func refusesWhenTotalPurseIsTooSmall() throws {
+        let world = try TestWorld(startingGold: 1)
+        let outcome = world.ledger.apply([LedgerEvent(kind: "expense", amount: 15, currency: "S", memo: "potion")], to: world.adventure, source: nil, origin: .narrator)
+        #expect(outcome.applied.isEmpty)
+        #expect(outcome.rejected.first?.reason.contains("has 1 G") == true)
+        #expect(world.ledger.netWorthInGold(of: world.party) == 1)
+    }
+
     @Test func unknownCurrencyIsRejected() throws {
         let world = try TestWorld(startingGold: 10)
         let outcome = world.ledger.apply([LedgerEvent(kind: "income", amount: 5, currency: "JPY", memo: "yen")], to: world.adventure, source: nil, origin: .player)
