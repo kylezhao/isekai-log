@@ -112,7 +112,7 @@ struct Ledger {
             let available = balance(of: from, in: currency)
             if available < amount {
                 // Pay with other coins when the purse holds enough overall: the merchant makes change.
-                try makeChange(for: from, shortfall: amount - available, in: currency, adventure: adventure, source: source)
+                try makeChange(for: from, shortfall: amount - available, price: amount, in: currency, adventure: adventure, source: source)
             }
         }
         let transaction = LedgerTransaction(
@@ -137,7 +137,7 @@ struct Ledger {
 
     /// Exchanges coins from a larger holding so `party` can pay `shortfall` in `currency`.
     /// Records the exchange as a system expense/income pair so the audit trail shows it.
-    private func makeChange(for party: Party, shortfall: Decimal, in currency: Currency, adventure: Adventure, source: ChatMessage?) throws {
+    private func makeChange(for party: Party, shortfall: Decimal, price: Decimal, in currency: Currency, adventure: Adventure, source: ChatMessage?) throws {
         let neededInGold = CurrencyConverter.convert(shortfall, from: currency, to: .gold)
         let candidates = Currency.inWorld.filter { $0 != currency }.sorted { $0.goldValue > $1.goldValue }
         for other in candidates {
@@ -157,7 +157,7 @@ struct Ledger {
             return
         }
         throw LedgerError.insufficientFunds(
-            needed: Money(amount: shortfall, currency: currency),
+            needed: Money(amount: price, currency: currency),
             available: Money(amount: netWorthInGold(of: party).rounded(scale: 2), currency: .gold)
         )
     }

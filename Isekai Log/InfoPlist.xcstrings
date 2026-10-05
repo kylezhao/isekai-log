@@ -1,30 +1,41 @@
 {
-  "sourceLanguage": "en",
-  "strings": {
-    "CFBundleDisplayName": {
-      "comment": "Bundle display name",
-      "extractionState": "extracted_with_value",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Isekai Log"
+  "sourceLanguage" : "en",
+  "strings" : {
+    "CFBundleDisplayName" : {
+      "comment" : "Bundle display name",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Isekai Log"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "異世界ログ"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "異世界ログ"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "异世界日志"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "异世界日志"
+          }
+        }
+      }
+    },
+    "CFBundleName" : {
+      "comment" : "Bundle name",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Isekai Log"
           }
         }
       }
     }
   },
-  "version": "1.0"
+  "version" : "1.0"
 }

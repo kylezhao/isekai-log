@@ -14,7 +14,6 @@ struct ChatView: View {
     @Environment(AppSettings.self) private var settings
     @State private var showingParty = false
     @State private var showingLedger = false
-    @FocusState private var composerFocused: Bool
 
     init(adventure: Adventure, modelContext: ModelContext, settings: AppSettings) {
         _viewModel = State(initialValue: ChatViewModel(adventure: adventure, modelContext: modelContext, settings: settings))
@@ -119,14 +118,15 @@ struct ChatView: View {
                 .transition(.move(edge: .bottom).combined(with: .opacity))
             }
 
-            HStack(alignment: .bottom, spacing: 10) {
+            // The vertical-axis text field anchors its text about 4 pt below the row's centre line,
+            // so it looks low next to the round send button. A little bottom padding on the field and a
+            // centred row put the placeholder, the caret and the button on the same axis.
+            HStack(alignment: .center, spacing: 10) {
                 TextField("What do you do?", text: Bindable(viewModel).inputText, axis: .vertical)
                     .lineLimit(1...5)
+                    .padding(.horizontal, 4)
+                    .padding(.bottom, 4)
                     .accessibilityIdentifier("composerField")
-                    .focused($composerFocused)
-                    .submitLabel(.send)
-                    .onSubmit { viewModel.send() }
-                    .padding(.horizontal, 6)
 
                 if viewModel.isResponding {
                     Button {
@@ -135,10 +135,9 @@ struct ChatView: View {
                         Image(systemName: "stop.fill")
                             .font(.system(size: 14, weight: .bold))
                             .foregroundStyle(.white)
-                            .frame(width: 32, height: 32)
+                            .frame(width: 30, height: 30)
                             .background(IsekaiTheme.magenta.opacity(0.8), in: Circle())
                     }
-                    .buttonStyle(.plain)
                 } else {
                     Button {
                         viewModel.send()
@@ -146,17 +145,16 @@ struct ChatView: View {
                         Image(systemName: "arrow.up")
                             .font(.system(size: 15, weight: .bold))
                             .foregroundStyle(.white)
-                            .frame(width: 32, height: 32)
+                            .frame(width: 30, height: 30)
                             .background(viewModel.canSend ? AnyShapeStyle(IsekaiTheme.playerBubble) : AnyShapeStyle(Color.secondary.opacity(0.3)), in: Circle())
                             .animation(.easeInOut(duration: 0.2), value: viewModel.canSend)
                     }
-                    .buttonStyle(.plain)
                     .disabled(!viewModel.canSend)
                     .accessibilityIdentifier("sendButton")
                 }
             }
-            .padding(.horizontal, 12)
-            .padding(.vertical, 9)
+            .padding(.horizontal, 14)
+            .padding(.vertical, 8)
             .glassEffect(.regular, in: RoundedRectangle(cornerRadius: 26, style: .continuous))
             .padding(.horizontal, 16)
         }

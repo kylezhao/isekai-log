@@ -1,54 +1,431 @@
 {
-  "sourceLanguage": "en",
-  "strings": {
-    "Add Item": {
-      "localizations": {
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "項目を追加"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "添加项目"
+  "sourceLanguage" : "en",
+  "strings" : {
+    "·" : {
+
+    },
+    "· %@" : {
+
+    },
+    "%@'s Log" : {
+
+    },
+    "%@'s Party" : {
+
+    },
+    "%lld→%lld tok" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld→%2$lld tok"
           }
         }
       }
     },
-    "Item at %@": {
-      "localizations": {
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%@ の項目"
+    "≈ %@ back home" : {
+
+    },
+    "≈ %@ in the old world" : {
+
+    },
+    "A party cannot transfer money to itself." : {
+
+    },
+    "About" : {
+
+    },
+    "Add an Anthropic API key in Settings before playing online." : {
+
+    },
+    "Add Item" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "項目を追加"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%@ 的项目"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "添加项目"
           }
         }
       }
     },
-    "Select an item": {
-      "localizations": {
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "項目を選択してください"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "请选择一个项目"
+    "Add to party" : {
+
+    },
+    "Adventure title (optional)" : {
+
+    },
+    "Amount" : {
+
+    },
+    "Amount must be positive." : {
+
+    },
+    "Anthropic API key" : {
+
+    },
+    "Apple Intelligence" : {
+
+    },
+    "Apple Intelligence · works offline" : {
+
+    },
+    "Begin" : {
+
+    },
+    "Begin a new life" : {
+
+    },
+    "Cancel" : {
+
+    },
+    "Cancelled." : {
+
+    },
+    "Changed %@ into %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Changed %1$@ into %2$@"
           }
         }
       }
+    },
+    "Class" : {
+
+    },
+    "Claude · needs network and an API key" : {
+
+    },
+    "Claude is overloaded right now. Try again in a moment." : {
+
+    },
+    "Cloud" : {
+
+    },
+    "Cloud mode needs an Anthropic API key. Add one in Settings." : {
+
+    },
+    "Cloud model" : {
+
+    },
+    "Context window: %lld tokens. Prompts are trimmed to fit." : {
+
+    },
+    "Copyright © 2026 Kyle Zhao. All rights reserved." : {
+
+    },
+    "Custom world" : {
+
+    },
+    "Default for new adventures" : {
+
+    },
+    "Delete adventure" : {
+
+    },
+    "Describe a transaction" : {
+
+    },
+    "Describe the narrator's voice, attitude and quirks" : {
+
+    },
+    "Describe the world and the hero's starting situation" : {
+
+    },
+    "Describe your own setting." : {
+
+    },
+    "Done" : {
+
+    },
+    "Exchange" : {
+
+    },
+    "Export log as Markdown" : {
+
+    },
+    "From" : {
+
+    },
+    "Groups the ledger has traded with. They appear automatically when money changes hands." : {
+
+    },
+    "Guild Ledger" : {
+
+    },
+    "Hero name" : {
+
+    },
+    "Higher is more surprising. Applies to the on-device model." : {
+
+    },
+    "History" : {
+
+    },
+    "Isekai Log" : {
+
+    },
+    "Item at %@" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ の項目"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ 的项目"
+          }
+        }
+      }
+    },
+    "keyword parser" : {
+
+    },
+    "Ledger" : {
+
+    },
+    "Ledger refused %@ for \"%@\": %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Ledger refused %1$@ for \"%2$@\": %3$@"
+          }
+        }
+      }
+    },
+    "Model" : {
+
+    },
+    "Name" : {
+
+    },
+    "Narrator" : {
+
+    },
+    "Narrator personality" : {
+
+    },
+    "Narrator runs" : {
+
+    },
+    "Net worth" : {
+
+    },
+    "New adventure" : {
+
+    },
+    "New Adventure" : {
+
+    },
+    "No money found in that sentence." : {
+
+    },
+    "No party members yet" : {
+
+    },
+    "No transactions yet. Coins will appear here as the story unfolds." : {
+
+    },
+    "Not enough funds: needs %@, has %@." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Not enough funds: needs %1$@, has %2$@."
+          }
+        }
+      }
+    },
+    "On-device" : {
+
+    },
+    "on-device model" : {
+
+    },
+    "On-device model" : {
+
+    },
+    "Online mode sends the persona, party status and recent story to the Anthropic Messages API with structured output. Opus 5.5 and Sonnet 5.5 run with adaptive thinking at low effort and server-side refusal fallbacks." : {
+
+    },
+    "Other parties" : {
+
+    },
+    "Party" : {
+
+    },
+    "Ready" : {
+
+    },
+    "Record in plain words" : {
+
+    },
+    "Recorded %lld via %@." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Recorded %1$lld via %2$@."
+          }
+        }
+      }
+    },
+    "Recruit a companion" : {
+
+    },
+    "Role" : {
+
+    },
+    "Rule-based narrator, no model needed" : {
+
+    },
+    "Scripted demo" : {
+
+    },
+    "Select an item" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "項目を選択してください"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "请选择一个项目"
+          }
+        }
+      }
+    },
+    "Settings" : {
+
+    },
+    "Show model metrics under replies" : {
+
+    },
+    "Start an adventure in another world. A narrator will tell your story and a ledger will keep honest books on every coin." : {
+
+    },
+    "Starting purse" : {
+
+    },
+    "Starting purse: %lld G" : {
+
+    },
+    "Stored in the keychain on this device" : {
+
+    },
+    "Switched to %@ mode." : {
+
+    },
+    "Temperature: %.2f" : {
+
+    },
+    "The adventure has no player party." : {
+
+    },
+    "The API key was rejected. Check it in Settings." : {
+
+    },
+    "The model is busy. Wait a moment and try again." : {
+
+    },
+    "The narrator declined to describe that scene. Try a different action." : {
+
+    },
+    "The narrator fell silent. Try again." : {
+
+    },
+    "The narrator is still answering the previous turn." : {
+
+    },
+    "The narrator refused this request." : {
+
+    },
+    "The narrator's reply could not be read." : {
+
+    },
+    "The on-device model assets are not available yet." : {
+
+    },
+    "The on-device model does not support this language." : {
+
+    },
+    "The on-device model is still downloading. Try again shortly." : {
+
+    },
+    "The on-device model is unavailable." : {
+
+    },
+    "The personality becomes the model's instructions, so it shapes every turn." : {
+
+    },
+    "The request timed out." : {
+
+    },
+    "The story grew past the model's memory. Older events were condensed. Try again." : {
+
+    },
+    "This device cannot run Apple Intelligence. Switch to Cloud mode." : {
+
+    },
+    "To" : {
+
+    },
+    "Treasury" : {
+
+    },
+    "Try “spent 20 silver on bread” or “gave 5 gold to Mira”. Parsed on-device when Apple Intelligence is available." : {
+
+    },
+    "Turn on Apple Intelligence in Settings, or switch to Cloud mode." : {
+
+    },
+    "Unavailable" : {
+
+    },
+    "Unknown currency %@." : {
+
+    },
+    "Use %@" : {
+
+    },
+    "Version" : {
+
+    },
+    "What do you do?" : {
+
+    },
+    "World" : {
+
+    },
+    "You" : {
+
+    },
+    "You have been summoned." : {
+
+    },
+    "You're offline. Switch to On-device mode to keep playing." : {
+
+    },
+    "Your hero" : {
+
     }
   },
-  "version": "1.0"
+  "version" : "1.0"
 }
