@@ -25,6 +25,8 @@ naming and file headers set up. Feature work has not started yet.
 
 - Swift 5, SwiftUI, SwiftData, Swift Testing
 - iOS 26.5+, Xcode 26.6
+- Localized in English, Simplified Chinese (简体中文) and Japanese (日本語):
+  UI strings in `Localizable.xcstrings`, app display name in `InfoPlist.xcstrings`
 - Planned: Foundation Models (offline mode), a cloud LLM API (online mode),
   SwiftData ledger for parties and transactions
 
