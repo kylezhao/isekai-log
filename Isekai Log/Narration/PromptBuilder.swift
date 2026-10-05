@@ -65,11 +65,14 @@ struct PromptBuilder: Sendable {
         \(input.premise)
 
         Rules:
+        - ledgerEvents may contain ONLY money moved by the player's latest action. One action, at most one or two events. \
+        If the action moves no money, ledgerEvents is an empty list. Example: "I sell the pelts for 30 gold" gives exactly \
+        one income event of 30 G and nothing else; do not add an inn, a meal, a fee or any other purchase on your own.
+        - Never state coin totals or balances in the narration; the ledger and the party status own them.
         - Narrate in second person ("you"). Keep each turn to 2 to 5 sentences and end with a hook or a choice.
         - Keep it PG-13: fantasy action is fine, no graphic gore and nothing sexual.
-        - Money is tracked by a ledger outside your control. Report every coin gained, spent or handed over \
-        through ledgerEvents with exact amounts. Never state balances yourself; the party status you receive is the truth.
-        - Only report money that the player's latest action actually moved. Never invent purchases, fees or finds the player did not make.
+        - Money is tracked by a ledger outside your control. Report coins gained, spent or handed over \
+        through ledgerEvents with exact amounts.
         - If the party cannot afford something, the purchase fails and you narrate the refusal. Do not report an event for it.
         - Exchange rates: \(CurrencyConverter.exchangeTable) Typical prices: meal 5 S, inn night 2 G, potion 15 G, iron sword 40 G.
         - Offer up to three short suggested actions.

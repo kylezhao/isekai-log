@@ -108,6 +108,10 @@ xcodebuild test -project "Isekai Log.xcodeproj" -scheme "Isekai Log" \
   ledger owns it; the status window is the source of truth.
 - Without the explicit "nothing is bought in the introduction" rule, the on-device model invented
   an inn stay and a loaf of bread in the opening turn. The rule is now part of the opening prompt.
+- On a normal turn ("I sell the wolf pelts for 30 gold") the on-device model booked the sale
+  correctly but also added a 10 G inn stay nobody asked for, and narrated the new total. The
+  ledger rule now leads the instructions with a worked example; further tuning should come from
+  playtest logs, and a post-filter that drops events unrelated to the action is a candidate.
 - Guided generation into `NarratorTurn` takes 5 to 10 seconds per turn on the iPhone 16e
   simulator for roughly 500 input and 80 output tokens; the cloud path is faster but needs a key.
 
