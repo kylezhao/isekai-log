@@ -85,6 +85,11 @@ final class OnDeviceNarratorEngine: NarratorEngine {
             retried = true
             usedPrompt = request.compactPrompt
             turn = try await stream(prompt: usedPrompt, instructions: request.instructions, options: options, onPartial: onPartial)
+        } catch LanguageModelSession.GenerationError.decodingFailure {
+            // Rare: the model's output did not fit the schema. One more attempt with the compact prompt.
+            retried = true
+            usedPrompt = request.compactPrompt
+            turn = try await stream(prompt: usedPrompt, instructions: request.instructions, options: options, onPartial: onPartial)
         }
 
         let latency = clock.now - start

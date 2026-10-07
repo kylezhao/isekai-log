@@ -13,6 +13,9 @@
 | 7 | Two sends in quick succession could both start a turn because `isResponding` was set inside the task | Playtest recorder sent actions back to back; two actions were dropped and a turn ended with empty text | `send` claims the turn synchronously before starting the task |
 | 8 | Currency converter pickers wrapped vertically and overlapped the result | UI test screenshot | Pickers on their own row with fixed size |
 | 9 | On-device model re-reported earlier money events on later turns (pelt sale booked twice, potion three times, a donation as income) | Round-1 playtest logs (`docs/playtests/round-1-debug`) | `LedgerEventDeduplicator` drops events matching a transaction from the previous two turns by amount, currency and memo keywords, and duplicates within a batch |
+| 10 | Model flipped event kinds (purchases and donations reported as income) and reported balance checks as events | Round-2 playtest logs | `LedgerEventSanitizer` corrects the kind from memo verbs and drops events with no money verb |
+| 11 | Model named the player's own party as the counterparty, which the ledger rejected as a self-transfer | Round-2 playtest logs | A self-counterparty is treated as "the world" |
+| 12 | One turn failed with "Failed to deserialize a Generable type from model output" | Round-2 playtest logs | One retry with the compact prompt on `decodingFailure`; none in round 3 |
 
 ## Known issues
 

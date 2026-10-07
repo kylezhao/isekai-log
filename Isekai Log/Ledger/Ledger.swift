@@ -9,6 +9,77 @@
 import Foundation
 import SwiftData
 
+/// Drops narrator events that merely restate money already booked in the previous turns.
+/// Small on-device models tend to re-emit earlier events when they see them in the story history.
+enum LedgerEventDeduplicator {
+    static let stopWords: Set<String> = ["the", "a", "an", "of", "for", "to", "at", "in", "on", "and", "with", "from", "sold", "bought", "buy", "sell", "paid", "pay", "gave", "give", "purchase", "purchased", "donation", "donated"]
+
+    static func keywords(_ text: String) -> Set<String> {
+        Set(text.lowercased().split { !$0.isLetter }.map(String.init).filter { $0.count > 2 && !stopWords.contains($0) })
+    }
+
+    /// Returns the events to keep and the ones judged to be repeats of `recent` transactions.
+    static func split(_ events: [LedgerEvent], recent: [LedgerTransaction]) -> (keep: [LedgerEvent], repeats: [LedgerEvent]) {
+        var keep: [LedgerEvent] = []
+        var repeats: [LedgerEvent] = []
+        var seenInBatch: [(Decimal, String, Set<String>)] = []
+        for event in events {
+            let words = keywords(event.memo)
+            let matchesRecent = recent.contains { transaction in
+                transaction.amount == event.amount.rounded(scale: 2)
+                    && transaction.currencyCode == event.resolvedCurrency.code
+                    && (words.isEmpty || !words.isDisjoint(with: keywords(transaction.memo)))
+            }
+            let matchesBatch = seenInBatch.contains { $0.0 == event.amount && $0.1 == event.resolvedCurrency.code && (words.isEmpty || !words.isDisjoint(with: $0.2)) }
+            if matchesRecent || matchesBatch {
+                repeats.append(event)
+            } else {
+                keep.append(event)
+                seenInBatch.append((event.amount, event.resolvedCurrency.code, words))
+            }
+        }
+        return (keep, repeats)
+    }
+}
+
+/// Corrects obviously wrong event kinds and drops "events" that describe no money moving.
+/// The on-device model marks purchases as income now and then, and reports balance checks as events.
+enum LedgerEventSanitizer {
+    static let expenseVerbs = ["bought", "buy", "purchas", "paid", "pay ", "spent", "spend", "donat", "gave", "give", "rent", "fee", "tip", "bribe", "cost", "hired", "lodging", "night at"]
+    static let incomeVerbs = ["sold", "sell", "earn", "reward", "bounty", "found", "receiv", "loot", "won", "wage", "tip from", "paid you", "payment for"]
+
+    struct Result: Equatable {
+        var events: [LedgerEvent]
+        var dropped: [LedgerEvent]
+        var corrected: [LedgerEvent]
+    }
+
+    static func sanitize(_ events: [LedgerEvent]) -> Result {
+        var kept: [LedgerEvent] = []
+        var dropped: [LedgerEvent] = []
+        var corrected: [LedgerEvent] = []
+        for var event in events {
+            let memo = event.memo.lowercased()
+            let hasExpense = expenseVerbs.contains { memo.contains($0) }
+            let hasIncome = incomeVerbs.contains { memo.contains($0) }
+            if !hasExpense, !hasIncome, event.transactionKind != .transfer {
+                // "You check your gold." carries no transaction.
+                dropped.append(event)
+                continue
+            }
+            if event.transactionKind != .transfer {
+                if hasExpense, !hasIncome, event.transactionKind == .income {
+                    event.kind = TransactionKind.expense.rawValue; corrected.append(event)
+                } else if hasIncome, !hasExpense, event.transactionKind == .expense {
+                    event.kind = TransactionKind.income.rawValue; corrected.append(event)
+                }
+            }
+            kept.append(event)
+        }
+        return Result(events: kept, dropped: dropped, corrected: corrected)
+    }
+}
+
 /// Bookkeeping for an adventure. Validates every money event, applies the accepted ones atomically,
 /// and derives balances from the transaction history.
 @MainActor
@@ -206,7 +277,11 @@ struct Ledger {
         guard let currency = Currency.resolve(event.currency), Currency.inWorld.contains(currency) else {
             throw LedgerError.unknownCurrency(event.currency)
         }
-        let counterparty = event.counterparty.trimmingCharacters(in: .whitespacesAndNewlines)
+        var counterparty = event.counterparty.trimmingCharacters(in: .whitespacesAndNewlines)
+        // The model occasionally names the player's own party as the other side; that means "the world".
+        if let existing = party(named: counterparty, in: adventure, createIfMissing: false), existing.id == playerParty.id {
+            counterparty = ""
+        }
         switch event.transactionKind {
         case .income:
             let from = counterparty.isEmpty ? nil : party(named: counterparty, in: adventure, createIfMissing: true)

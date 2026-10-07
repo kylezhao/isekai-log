@@ -104,6 +104,55 @@ struct LedgerTests {
     }
 }
 
+@MainActor
+struct DeduplicatorTests {
+    @Test func dropsRestatementsOfRecentTransactions() throws {
+        let world = try TestWorld(startingGold: 10)
+        let message = ChatMessage(role: .narrator, text: "You sell the pelts.", adventure: world.adventure)
+        world.context.insert(message); world.adventure.messages.append(message)
+        _ = world.ledger.apply([LedgerEvent(kind: "income", amount: 30, currency: "G", memo: "Sold wolf pelts")], to: world.adventure, source: message, origin: .narrator)
+        let recent = message.transactions
+        let incoming = [
+            LedgerEvent(kind: "income", amount: 30, currency: "G", memo: "sold wolf pelts"),      // repeat
+            LedgerEvent(kind: "expense", amount: 15, currency: "G", memo: "bought healing potion"), // new
+            LedgerEvent(kind: "income", amount: 15, currency: "G", memo: "healing potion"),        // repeat within batch, sign flipped
+            LedgerEvent(kind: "expense", amount: 30, currency: "G", memo: "night at the inn"),     // same amount, different memo: new
+        ]
+        let (keep, repeats) = LedgerEventDeduplicator.split(incoming, recent: recent)
+        #expect(keep.map(\.memo) == ["bought healing potion", "night at the inn"])
+        #expect(repeats.count == 2)
+    }
+
+    @Test func keywordsIgnoreVerbsAndShortWords() {
+        #expect(LedgerEventDeduplicator.keywords("Sold wolf pelts to the merchant") == ["wolf", "pelts", "merchant"])
+        #expect(LedgerEventDeduplicator.keywords("Purchase of healing potion.") == ["healing", "potion"])
+    }
+}
+
+struct SanitizerTests {
+    @Test func correctsKindsFromMemoVerbsAndDropsNonEvents() {
+        let result = LedgerEventSanitizer.sanitize([
+            LedgerEvent(kind: "income", amount: 5, currency: "G", memo: "Donated to the orphanage."),
+            LedgerEvent(kind: "income", amount: 10, currency: "S", memo: "bought 10 silver worth of salt"),
+            LedgerEvent(kind: "expense", amount: 50, currency: "G", memo: "Earned as a waiter."),
+            LedgerEvent(kind: "income", amount: 20, currency: "G", memo: "You check your gold."),
+            LedgerEvent(kind: "transfer", amount: 4, currency: "G", memo: "guild fee", counterparty: "Guild"),
+            LedgerEvent(kind: "income", amount: 30, currency: "G", memo: "sold wolf pelts"),
+        ])
+        #expect(result.events.map(\.kind) == ["expense", "expense", "income", "transfer", "income"])
+        #expect(result.dropped.map(\.memo) == ["You check your gold."])
+        #expect(result.corrected.count == 3)
+    }
+
+    @MainActor @Test func selfCounterpartyIsTreatedAsTheWorld() throws {
+        let world = try TestWorld(startingGold: 20)
+        let outcome = world.ledger.apply([LedgerEvent(kind: "expense", amount: 15, currency: "G", memo: "bought healing potion", counterparty: "Testers")], to: world.adventure, source: nil, origin: .narrator)
+        #expect(outcome.rejected.isEmpty)
+        #expect(outcome.applied.first?.toParty == nil)
+        #expect(world.ledger.balance(of: world.party, in: .gold) == 5)
+    }
+}
+
 struct CurrencyTests {
     @Test func goldToYenFollowsIsekaiRate() {
         #expect(CurrencyConverter.convert(1, from: .gold, to: .yen) == 10_000)

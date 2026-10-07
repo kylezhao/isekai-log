@@ -29,6 +29,19 @@ treated as a restatement and shown as "Already recorded" instead of being booked
 runs within a single turn's batch, so a sign-flipped duplicate of a fresh event is dropped too.
 Compare the ledger tables between the two rounds for the same actions.
 
-Remaining model behaviour visible in both rounds, kept for the bug list: unrequested extra events
-(an inn stay nobody asked for), coin totals stated in narration, and repetitive scene-setting when
-the model does not know how to react to an action (the castle purchase).
+Round 2 then showed three more defects: the model named the player's own party as the counterparty
+("A party cannot transfer money to itself"), it flipped the sign on purchases and donations
+("+10 S bought salt", "+5 G Donated to the orphanage"), and one turn failed to decode
+("Failed to deserialize a Generable type").
+
+**Round 3 (`round-3/`)** adds `LedgerEventSanitizer` (expense/income verbs in the memo override a
+wrong kind; events with no money verb such as "You check your gold" are dropped), treats a
+self-counterparty as the world, and retries a turn once with the compact prompt on a decoding
+failure. In round 3 every turn decoded, donations and purchases carry the right sign, and the
+pelts/potion restatements all surface as "Already recorded" instead of double-booking. Mean latency
+per turn fell to 3.2–4.1 s as prompts stayed shorter.
+
+Remaining model behaviour visible in all rounds, kept for the bug list: unrequested extra events
+(a potion "resold" for 15 G, wolf pelts sold in a dungeon city), coin totals stated in narration,
+and repetitive scene-setting when the model does not know how to react to an action (the castle
+purchase).

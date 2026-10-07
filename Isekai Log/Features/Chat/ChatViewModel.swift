@@ -80,6 +80,8 @@ final class ChatViewModel {
 
     func send(_ text: String) {
         guard !isResponding else { return }
+        // Claim the turn synchronously so a second send cannot slip in before the task starts.
+        isResponding = true
         let playerMessage = ChatMessage(role: .player, text: text, adventure: adventure)
         modelContext.insert(playerMessage)
         adventure.messages.append(playerMessage)
@@ -139,7 +141,15 @@ final class ChatViewModel {
     }
 
     private func book(_ events: [LedgerEvent], source: ChatMessage) {
-        let outcome = ledger.apply(events, to: adventure, source: source, origin: .narrator)
+        // Events already booked in the previous turns are restatements, not new money.
+        let recentMessages = adventure.sortedMessages.filter { $0.role == .narrator && $0.id != source.id }.suffix(2)
+        let recent = recentMessages.flatMap(\.transactions).filter { $0.origin == .narrator }
+        let (fresh, repeats) = LedgerEventDeduplicator.split(events, recent: recent)
+        for repeated in repeats {
+            addSystemNote(String(localized: "Already recorded: \(repeated.money.formatted()) · \(repeated.memo)"))
+        }
+        let sanitized = LedgerEventSanitizer.sanitize(fresh)
+        let outcome = ledger.apply(sanitized.events, to: adventure, source: source, origin: .narrator)
         for transaction in outcome.applied {
             addSystemNote(Self.ledgerLine(for: transaction, playerParty: adventure.playerParty))
         }

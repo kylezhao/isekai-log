@@ -21,7 +21,8 @@ Per-turn metrics are stored on every narrator message (engine, model id, latency
 | Run | Device | Latency per turn | Tokens in → out | Notes |
 | --- | --- | --- | --- | --- |
 | On-device, simulator (Mac host, iPhone 16e simulator, iOS 26.5) | first turn 5.4 s, later turns 3.2–5.0 s | 470–760 → 55–90 | first turn includes model load |
-| On-device, simulator, recorded playtests (3 sessions, 15 turns) | 4.9–9.2 s, mean 7.5 s | 580–990 → 70–135 | prompts grow with history; see `docs/playtests` run metrics |
+| On-device, simulator, recorded playtests round 1 (3 sessions, 15 turns) | 4.9–9.2 s, mean 7.5 s | 580–990 → 70–135 | prompts grow with history; see `docs/playtests` run metrics |
+| On-device, simulator, recorded playtests round 3 (3 sessions, 15 turns) | 2.1–5.4 s, mean 3.2–4.1 s | see logs | 0 decode failures after the retry; built with Xcode 27.0 against the iOS 26.5 runtime |
 | On-device, iPhone 16e (Kyle's device, 2026-10-06) | ≈ 5.0 s per turn | ≈ 590 → 60 | from the device screenshot in the showcase |
 | Scripted | 1.0–1.7 s (streaming animation) | n/a | deterministic |
 | Cloud | not measured live | n/a | no API key available during development; request shape is unit-tested |
