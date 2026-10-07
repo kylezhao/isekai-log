@@ -1,0 +1,40 @@
+{
+  "fill": {
+    "automatic-gradient": "extended-srgb:0.27000,0.12000,0.47000,1.00000"
+  },
+  "groups": [
+    {
+      "layers": [
+        {
+          "image-name": "stars.svg",
+          "name": "stars"
+        },
+        {
+          "image-name": "scroll.svg",
+          "name": "scroll"
+        },
+        {
+          "image-name": "moons.svg",
+          "name": "moons"
+        }
+      ],
+      "shadow": {
+        "kind": "neutral",
+        "opacity": 0.5
+      },
+      "translucency": {
+        "enabled": true,
+        "value": 0.5
+      },
+      "specular": true,
+      "blur-material": 0.5,
+      "lighting": "individual"
+    }
+  ],
+  "supported-platforms": {
+    "circles": [
+      "watchOS"
+    ],
+    "squares": "shared"
+  }
+}
