@@ -8,7 +8,16 @@ The narrator can run fully offline on Apple's on-device model or online through 
 
 Built for the Metanomaly iOS programming assignment (LLM Roleplay Adventure Chat Framework).
 
-![Home](docs/screenshots/01-home.png) ![Chat](docs/screenshots/05-chat-ledger-note.png) ![Ledger](docs/screenshots/07-ledger.png)
+
+## Showcase
+
+**Screen recording (iPhone 16e):** [docs/showcase/isekai-log-showcase.mp4](docs/showcase/isekai-log-showcase.mp4)
+
+| On device: the ledger refuses an unaffordable purchase | On device: a sale booked from the narration | Home screen | Simulator: guild ledger |
+| --- | --- | --- | --- |
+| ![Refusal](docs/showcase/device-chat-refusal.jpeg) | ![Sale](docs/showcase/device-chat-sale.jpeg) | ![Home screen](docs/showcase/device-home-screen.jpeg) | ![Ledger](docs/screenshots/07-ledger.png) |
+
+Submission documents: [AI conversation log](docs/AI_CONVERSATION_LOG.md) · [Models, parameters and metrics](docs/MODELS.md) · [Bug list](docs/BUGS.md) · [Optimizations](docs/OPTIMIZATIONS.md) · [Playtest logs and iteration notes](docs/playtests/README.md)
 
 ## Features
 
