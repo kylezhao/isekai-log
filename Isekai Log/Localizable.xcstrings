@@ -1,431 +1,1847 @@
 {
-  "sourceLanguage" : "en",
-  "strings" : {
-    "·" : {
-
-    },
-    "· %@" : {
-
-    },
-    "%@'s Log" : {
-
-    },
-    "%@'s Party" : {
-
-    },
-    "%lld→%lld tok" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$lld→%2$lld tok"
-          }
-        }
-      }
-    },
-    "≈ %@ back home" : {
-
-    },
-    "≈ %@ in the old world" : {
-
-    },
-    "A party cannot transfer money to itself." : {
-
-    },
-    "About" : {
-
-    },
-    "Add an Anthropic API key in Settings before playing online." : {
-
-    },
-    "Add Item" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "項目を追加"
+  "sourceLanguage": "en",
+  "strings": {
+    "%@'s Log": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@の記録"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "添加项目"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@的日志"
           }
         }
       }
     },
-    "Add to party" : {
-
-    },
-    "Adventure title (optional)" : {
-
-    },
-    "Amount" : {
-
-    },
-    "Amount must be positive." : {
-
-    },
-    "Anthropic API key" : {
-
-    },
-    "Apple Intelligence" : {
-
-    },
-    "Apple Intelligence · works offline" : {
-
-    },
-    "Begin" : {
-
-    },
-    "Begin a new life" : {
-
-    },
-    "Cancel" : {
-
-    },
-    "Cancelled." : {
-
-    },
-    "Changed %@ into %@" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Changed %1$@ into %2$@"
-          }
-        }
-      }
-    },
-    "Class" : {
-
-    },
-    "Claude · needs network and an API key" : {
-
-    },
-    "Claude is overloaded right now. Try again in a moment." : {
-
-    },
-    "Cloud" : {
-
-    },
-    "Cloud mode needs an Anthropic API key. Add one in Settings." : {
-
-    },
-    "Cloud model" : {
-
-    },
-    "Context window: %lld tokens. Prompts are trimmed to fit." : {
-
-    },
-    "Copyright © 2026 Kyle Zhao. All rights reserved." : {
-
-    },
-    "Custom world" : {
-
-    },
-    "Default for new adventures" : {
-
-    },
-    "Delete adventure" : {
-
-    },
-    "Describe a transaction" : {
-
-    },
-    "Describe the narrator's voice, attitude and quirks" : {
-
-    },
-    "Describe the world and the hero's starting situation" : {
-
-    },
-    "Describe your own setting." : {
-
-    },
-    "Done" : {
-
-    },
-    "Exchange" : {
-
-    },
-    "Export log as Markdown" : {
-
-    },
-    "From" : {
-
-    },
-    "Groups the ledger has traded with. They appear automatically when money changes hands." : {
-
-    },
-    "Guild Ledger" : {
-
-    },
-    "Hero name" : {
-
-    },
-    "Higher is more surprising. Applies to the on-device model." : {
-
-    },
-    "History" : {
-
-    },
-    "Isekai Log" : {
-
-    },
-    "Item at %@" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ の項目"
+    "%@'s Party": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@のパーティー"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ 的项目"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@的队伍"
           }
         }
       }
     },
-    "keyword parser" : {
-
-    },
-    "Ledger" : {
-
-    },
-    "Ledger refused %@ for \"%@\": %@" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Ledger refused %1$@ for \"%2$@\": %3$@"
-          }
-        }
-      }
-    },
-    "Model" : {
-
-    },
-    "Name" : {
-
-    },
-    "Narrator" : {
-
-    },
-    "Narrator personality" : {
-
-    },
-    "Narrator runs" : {
-
-    },
-    "Net worth" : {
-
-    },
-    "New adventure" : {
-
-    },
-    "New Adventure" : {
-
-    },
-    "No money found in that sentence." : {
-
-    },
-    "No party members yet" : {
-
-    },
-    "No transactions yet. Coins will appear here as the story unfolds." : {
-
-    },
-    "Not enough funds: needs %@, has %@." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Not enough funds: needs %1$@, has %2$@."
-          }
-        }
-      }
-    },
-    "On-device" : {
-
-    },
-    "on-device model" : {
-
-    },
-    "On-device model" : {
-
-    },
-    "Online mode sends the persona, party status and recent story to the Anthropic Messages API with structured output. Opus 5.5 and Sonnet 5.5 run with adaptive thinking at low effort and server-side refusal fallbacks." : {
-
-    },
-    "Other parties" : {
-
-    },
-    "Party" : {
-
-    },
-    "Ready" : {
-
-    },
-    "Record in plain words" : {
-
-    },
-    "Recorded %lld via %@." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Recorded %1$lld via %2$@."
-          }
-        }
-      }
-    },
-    "Recruit a companion" : {
-
-    },
-    "Role" : {
-
-    },
-    "Rule-based narrator, no model needed" : {
-
-    },
-    "Scripted demo" : {
-
-    },
-    "Select an item" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "項目を選択してください"
+    "%lld→%lld tok": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%1$lld→%2$lld tok"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "请选择一个项目"
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld→%lld トークン"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld→%lld 词元"
           }
         }
       }
     },
-    "Settings" : {
-
+    "A party cannot transfer money to itself.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "パーティーは自分自身にお金を送金できません。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "队伍不能向自己转账。"
+          }
+        }
+      }
     },
-    "Show model metrics under replies" : {
-
+    "About": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "情報"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "关于"
+          }
+        }
+      }
     },
-    "Start an adventure in another world. A narrator will tell your story and a ledger will keep honest books on every coin." : {
-
+    "Add Item": {
+      "extractionState": "stale",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "項目を追加"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "添加项目"
+          }
+        }
+      }
     },
-    "Starting purse" : {
-
+    "Add an Anthropic API key in Settings before playing online.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "オンラインでプレイする前に「設定」で Anthropic API キーを追加してください。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在线游玩前请先在“设置”中添加 Anthropic API 密钥。"
+          }
+        }
+      }
     },
-    "Starting purse: %lld G" : {
-
+    "Add to party": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "パーティーに加える"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "加入队伍"
+          }
+        }
+      }
     },
-    "Stored in the keychain on this device" : {
-
+    "Adventure title (optional)": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "冒険のタイトル（任意）"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "冒险标题（可选）"
+          }
+        }
+      }
     },
-    "Switched to %@ mode." : {
-
+    "Amount": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "金額"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "金额"
+          }
+        }
+      }
     },
-    "Temperature: %.2f" : {
-
+    "Amount must be positive.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "金額は正の数である必要があります。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "金额必须为正数。"
+          }
+        }
+      }
     },
-    "The adventure has no player party." : {
-
+    "Anthropic API key": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anthropic API キー"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anthropic API 密钥"
+          }
+        }
+      }
     },
-    "The API key was rejected. Check it in Settings." : {
-
+    "Apple Intelligence": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple Intelligence"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple 智能"
+          }
+        }
+      }
     },
-    "The model is busy. Wait a moment and try again." : {
-
+    "Apple Intelligence · works offline": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple Intelligence · オフラインで動作"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple 智能 · 可离线使用"
+          }
+        }
+      }
     },
-    "The narrator declined to describe that scene. Try a different action." : {
-
+    "Begin": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "はじめる"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "开始"
+          }
+        }
+      }
     },
-    "The narrator fell silent. Try again." : {
-
+    "Begin a new life": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "新しい人生をはじめる"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "开启新的人生"
+          }
+        }
+      }
     },
-    "The narrator is still answering the previous turn." : {
-
+    "Cancel": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "キャンセル"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "取消"
+          }
+        }
+      }
     },
-    "The narrator refused this request." : {
-
+    "Cancelled.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "キャンセルしました。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已取消。"
+          }
+        }
+      }
     },
-    "The narrator's reply could not be read." : {
-
+    "Changed %@ into %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Changed %1$@ into %2$@"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ を %@ に両替"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "将 %@ 兑换为 %@"
+          }
+        }
+      }
     },
-    "The on-device model assets are not available yet." : {
-
+    "Class": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "職業"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "职业"
+          }
+        }
+      }
     },
-    "The on-device model does not support this language." : {
-
+    "Claude is overloaded right now. Try again in a moment.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Claude は現在混み合っています。しばらくしてからお試しください。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Claude 当前负载过高。请稍后再试。"
+          }
+        }
+      }
     },
-    "The on-device model is still downloading. Try again shortly." : {
-
+    "Claude · needs network and an API key": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Claude · ネットワークと API キーが必要"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Claude · 需要网络和 API 密钥"
+          }
+        }
+      }
     },
-    "The on-device model is unavailable." : {
-
+    "Cloud": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "クラウド"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "云端"
+          }
+        }
+      }
     },
-    "The personality becomes the model's instructions, so it shapes every turn." : {
-
+    "Cloud mode needs an Anthropic API key. Add one in Settings.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "クラウドモードには Anthropic API キーが必要です。「設定」で追加してください。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "云端模式需要 Anthropic API 密钥。请在“设置”中添加。"
+          }
+        }
+      }
     },
-    "The request timed out." : {
-
+    "Cloud model": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "クラウドモデル"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "云端模型"
+          }
+        }
+      }
     },
-    "The story grew past the model's memory. Older events were condensed. Try again." : {
-
+    "Context window: %lld tokens. Prompts are trimmed to fit.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "コンテキストウィンドウ: %lld トークン。プロンプトは収まるように短縮されます。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "上下文窗口：%lld 词元。提示词会被裁剪以适应。"
+          }
+        }
+      }
     },
-    "This device cannot run Apple Intelligence. Switch to Cloud mode." : {
-
+    "Copyright © 2026 Kyle Zhao. All rights reserved.": {
+      "localizations": {},
+      "shouldTranslate": false
     },
-    "To" : {
-
+    "Custom world": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "カスタム世界"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "自定义世界"
+          }
+        }
+      }
     },
-    "Treasury" : {
-
+    "Default for new adventures": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "新しい冒険の既定値"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "新冒险的默认设置"
+          }
+        }
+      }
     },
-    "Try “spent 20 silver on bread” or “gave 5 gold to Mira”. Parsed on-device when Apple Intelligence is available." : {
-
+    "Delete adventure": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "冒険を削除"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "删除冒险"
+          }
+        }
+      }
     },
-    "Turn on Apple Intelligence in Settings, or switch to Cloud mode." : {
-
+    "Describe a transaction": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "取引を説明してください"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "描述一笔交易"
+          }
+        }
+      }
     },
-    "Unavailable" : {
-
+    "Describe the narrator's voice, attitude and quirks": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "語り手の声色、態度、くせを説明してください"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "描述叙述者的语气、态度和怪癖"
+          }
+        }
+      }
     },
-    "Unknown currency %@." : {
-
+    "Describe the world and the hero's starting situation": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "世界と主人公の初期状況を説明してください"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "描述世界和主角的初始处境"
+          }
+        }
+      }
     },
-    "Use %@" : {
-
+    "Describe your own setting.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "自分だけの舞台設定を説明します。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "描述你自己的设定。"
+          }
+        }
+      }
     },
-    "Version" : {
-
+    "Done": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "完了"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "完成"
+          }
+        }
+      }
     },
-    "What do you do?" : {
-
+    "Exchange": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "両替"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "兑换"
+          }
+        }
+      }
     },
-    "World" : {
-
+    "Export log as Markdown": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ログを Markdown で書き出す"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "导出日志为 Markdown"
+          }
+        }
+      }
     },
-    "You" : {
-
+    "From": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "変換元"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "从"
+          }
+        }
+      }
     },
-    "You have been summoned." : {
-
+    "Groups the ledger has traded with. They appear automatically when money changes hands.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "台帳が取引したグループ。お金が動くと自動的に表示されます。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "账本曾与之交易的团体。资金往来时会自动出现。"
+          }
+        }
+      }
     },
-    "You're offline. Switch to On-device mode to keep playing." : {
-
+    "Guild Ledger": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ギルド台帳"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "公会账本"
+          }
+        }
+      }
     },
-    "Your hero" : {
-
+    "Hero name": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "主人公の名前"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "主角名字"
+          }
+        }
+      }
+    },
+    "Higher is more surprising. Applies to the on-device model.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "高いほど意外性が増します。デバイス上のモデルに適用されます。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "数值越高越出人意料。适用于设备端模型。"
+          }
+        }
+      }
+    },
+    "History": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "履歴"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "历史"
+          }
+        }
+      }
+    },
+    "Isekai Log": {
+      "localizations": {},
+      "shouldTranslate": false
+    },
+    "Item at %@": {
+      "extractionState": "stale",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ の項目"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 的项目"
+          }
+        }
+      }
+    },
+    "Ledger": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "台帳"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "账本"
+          }
+        }
+      }
+    },
+    "Ledger refused %@ for \"%@\": %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Ledger refused %1$@ for \"%2$@\": %3$@"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "台帳は「%2$@」の %1$@ を拒否しました: %3$@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "账本拒绝了“%2$@”的 %1$@：%3$@"
+          }
+        }
+      }
+    },
+    "Model": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "モデル"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "模型"
+          }
+        }
+      }
+    },
+    "Name": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "名前"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "名字"
+          }
+        }
+      }
+    },
+    "Narrator": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "語り手"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "叙述者"
+          }
+        }
+      }
+    },
+    "Narrator personality": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "語り手の性格"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "叙述者性格"
+          }
+        }
+      }
+    },
+    "Narrator runs": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "語り手の実行場所"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "叙述者运行于"
+          }
+        }
+      }
+    },
+    "Net worth": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "総資産"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "净资产"
+          }
+        }
+      }
+    },
+    "New Adventure": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "新しい冒険"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "新冒险"
+          }
+        }
+      }
+    },
+    "New adventure": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "新しい冒険"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "新冒险"
+          }
+        }
+      }
+    },
+    "No money found in that sentence.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "その文にはお金が見つかりませんでした。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "这句话中没有发现金额。"
+          }
+        }
+      }
+    },
+    "No party members yet": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "まだパーティーメンバーがいません"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "还没有队伍成员"
+          }
+        }
+      }
+    },
+    "No transactions yet. Coins will appear here as the story unfolds.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "まだ取引はありません。物語が進むとここに硬貨が現れます。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "还没有交易。随着故事展开，硬币会出现在这里。"
+          }
+        }
+      }
+    },
+    "Not enough funds: needs %@, has %@.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Not enough funds: needs %1$@, has %2$@."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "資金不足: 必要 %@、所持 %@。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "资金不足：需要 %@，现有 %@。"
+          }
+        }
+      }
+    },
+    "On-device": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "デバイス上"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "设备端"
+          }
+        }
+      }
+    },
+    "On-device model": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "デバイス上のモデル"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "设备端模型"
+          }
+        }
+      }
+    },
+    "Online mode sends the persona, party status and recent story to the Anthropic Messages API with structured output. Opus 5.5 and Sonnet 5.5 run with adaptive thinking at low effort and server-side refusal fallbacks.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "オンラインモードでは、ペルソナ、パーティーの状態、直近の物語を構造化出力付きで Anthropic Messages API に送信します。Opus 5.5 と Sonnet 5.5 は低エフォートの適応的思考とサーバー側の拒否フォールバックで動作します。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在线模式会将角色设定、队伍状态和近期剧情以结构化输出发送至 Anthropic Messages API。Opus 5.5 与 Sonnet 5.5 以低强度自适应思考运行，并启用服务器端拒绝回退。"
+          }
+        }
+      }
+    },
+    "Other parties": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "その他のパーティー"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "其他队伍"
+          }
+        }
+      }
+    },
+    "Party": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "パーティー"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "队伍"
+          }
+        }
+      }
+    },
+    "Ready": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "準備完了"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "就绪"
+          }
+        }
+      }
+    },
+    "Record in plain words": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ふつうの言葉で記録"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "用日常语言记录"
+          }
+        }
+      }
+    },
+    "Recorded %lld via %@.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Recorded %1$lld via %2$@."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%2$@ で %1$lld 件を記録しました。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "通过 %2$@ 记录了 %1$lld 笔。"
+          }
+        }
+      }
+    },
+    "Recruit a companion": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "仲間を勧誘"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "招募同伴"
+          }
+        }
+      }
+    },
+    "Role": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "役割"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "角色"
+          }
+        }
+      }
+    },
+    "Rule-based narrator, no model needed": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ルールベースの語り手、モデル不要"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "基于规则的叙述者，无需模型"
+          }
+        }
+      }
+    },
+    "Scripted demo": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "スクリプトデモ"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "脚本演示"
+          }
+        }
+      }
+    },
+    "Select an item": {
+      "extractionState": "stale",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "項目を選択してください"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "请选择一个项目"
+          }
+        }
+      }
+    },
+    "Settings": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "設定"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "设置"
+          }
+        }
+      }
+    },
+    "Show model metrics under replies": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "返答の下にモデル指標を表示"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在回复下方显示模型指标"
+          }
+        }
+      }
+    },
+    "Start an adventure in another world. A narrator will tell your story and a ledger will keep honest books on every coin.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "異世界での冒険をはじめましょう。語り手が物語を紡ぎ、台帳がすべての硬貨を正直に記録します。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "开启异世界冒险。叙述者讲述你的故事，账本如实记录每一枚硬币。"
+          }
+        }
+      }
+    },
+    "Starting purse": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "初期資金"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "初始钱袋"
+          }
+        }
+      }
+    },
+    "Starting purse: %lld G": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "初期資金: %lld G"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "初始钱袋：%lld G"
+          }
+        }
+      }
+    },
+    "Stored in the keychain on this device": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このデバイスのキーチェーンに保存されています"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已保存在此设备的钥匙串中"
+          }
+        }
+      }
+    },
+    "Switched to %@ mode.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@モードに切り替えました。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已切换到%@模式。"
+          }
+        }
+      }
+    },
+    "Temperature: %.2f": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "温度: %.2f"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "温度：%.2f"
+          }
+        }
+      }
+    },
+    "The API key was rejected. Check it in Settings.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "API キーが拒否されました。「設定」で確認してください。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "API 密钥被拒绝。请在“设置”中检查。"
+          }
+        }
+      }
+    },
+    "The adventure has no player party.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "この冒険にはプレイヤーのパーティーがありません。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "此冒险没有玩家队伍。"
+          }
+        }
+      }
+    },
+    "The model is busy. Wait a moment and try again.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "モデルが混み合っています。少し待ってからお試しください。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "模型正忙。请稍候再试。"
+          }
+        }
+      }
+    },
+    "The narrator declined to describe that scene. Try a different action.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "語り手はその場面の描写を断りました。別の行動を試してください。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "叙述者拒绝描述这一场景。请尝试其他行动。"
+          }
+        }
+      }
+    },
+    "The narrator fell silent. Try again.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "語り手が沈黙しました。もう一度お試しください。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "叙述者陷入了沉默。请再试一次。"
+          }
+        }
+      }
+    },
+    "The narrator is still answering the previous turn.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "語り手はまだ前のターンに応答中です。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "叙述者仍在回应上一回合。"
+          }
+        }
+      }
+    },
+    "The narrator refused this request.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "語り手はこの要求を拒否しました。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "叙述者拒绝了这个请求。"
+          }
+        }
+      }
+    },
+    "The narrator's reply could not be read.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "語り手の返答を読み取れませんでした。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "无法读取叙述者的回复。"
+          }
+        }
+      }
+    },
+    "The on-device model assets are not available yet.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "デバイス上のモデルのアセットはまだ利用できません。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "设备端模型资源尚不可用。"
+          }
+        }
+      }
+    },
+    "The on-device model does not support this language.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "デバイス上のモデルはこの言語に対応していません。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "设备端模型不支持此语言。"
+          }
+        }
+      }
+    },
+    "The on-device model is still downloading. Try again shortly.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "デバイス上のモデルをダウンロード中です。しばらくしてからお試しください。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "设备端模型仍在下载。请稍后再试。"
+          }
+        }
+      }
+    },
+    "The on-device model is unavailable.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "デバイス上のモデルを利用できません。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "设备端模型不可用。"
+          }
+        }
+      }
+    },
+    "The personality becomes the model's instructions, so it shapes every turn.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "性格はモデルへの指示になるため、すべてのターンに影響します。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "性格会成为模型的指令，因此会影响每一回合。"
+          }
+        }
+      }
+    },
+    "The request timed out.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "リクエストがタイムアウトしました。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "请求超时。"
+          }
+        }
+      }
+    },
+    "The story grew past the model's memory. Older events were condensed. Try again.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "物語がモデルの記憶を超えました。古い出来事を要約しました。もう一度お試しください。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "故事超出了模型的记忆。较早的事件已被压缩。请再试一次。"
+          }
+        }
+      }
+    },
+    "This device cannot run Apple Intelligence. Switch to Cloud mode.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このデバイスでは Apple Intelligence を実行できません。クラウドモードに切り替えてください。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "此设备无法运行 Apple 智能。请切换到云端模式。"
+          }
+        }
+      }
+    },
+    "To": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "変換先"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "到"
+          }
+        }
+      }
+    },
+    "Treasury": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "金庫"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "金库"
+          }
+        }
+      }
+    },
+    "Try “spent 20 silver on bread” or “gave 5 gold to Mira”. Parsed on-device when Apple Intelligence is available.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "「パンに銀貨20枚使った」「ミラに金貨5枚渡した」のように入力してみてください。Apple Intelligence が使える場合はデバイス上で解析されます。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "试试“花了20银币买面包”或“给了米拉5金币”。Apple 智能可用时在设备上解析。"
+          }
+        }
+      }
+    },
+    "Turn on Apple Intelligence in Settings, or switch to Cloud mode.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "「設定」で Apple Intelligence をオンにするか、クラウドモードに切り替えてください。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "请在“设置”中开启 Apple 智能，或切换到云端模式。"
+          }
+        }
+      }
+    },
+    "Unavailable": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "利用不可"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "不可用"
+          }
+        }
+      }
+    },
+    "Unknown currency %@.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "不明な通貨 %@。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "未知货币 %@。"
+          }
+        }
+      }
+    },
+    "Use %@": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@を使う"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "使用%@"
+          }
+        }
+      }
+    },
+    "Version": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "バージョン"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "版本"
+          }
+        }
+      }
+    },
+    "What do you do?": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "どうしますか？"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "你要做什么？"
+          }
+        }
+      }
+    },
+    "World": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "世界"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "世界"
+          }
+        }
+      }
+    },
+    "You": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "あなた"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "你"
+          }
+        }
+      }
+    },
+    "You have been summoned.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "あなたは召喚されました。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "你被召唤了。"
+          }
+        }
+      }
+    },
+    "You're offline. Switch to On-device mode to keep playing.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "オフラインです。デバイス上モードに切り替えてプレイを続けてください。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "您已离线。请切换到设备端模式以继续游玩。"
+          }
+        }
+      }
+    },
+    "Your hero": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "あなたの主人公"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "你的主角"
+          }
+        }
+      }
+    },
+    "keyword parser": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "キーワード解析"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "关键词解析"
+          }
+        }
+      }
+    },
+    "on-device model": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "デバイス上のモデル"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "设备端模型"
+          }
+        }
+      }
+    },
+    "·": {
+      "localizations": {},
+      "shouldTranslate": false
+    },
+    "· %@": {
+      "localizations": {},
+      "shouldTranslate": false
+    },
+    "≈ %@ back home": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "≈ 元の世界で %@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "≈ 相当于老家的 %@"
+          }
+        }
+      }
+    },
+    "≈ %@ in the old world": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "≈ 元の世界で %@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "≈ 相当于旧世界的 %@"
+          }
+        }
+      }
     }
   },
-  "version" : "1.0"
+  "version": "1.0"
 }
